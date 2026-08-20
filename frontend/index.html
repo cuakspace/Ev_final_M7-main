@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administración de países</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="container py-4">
+      <header class="mb-4 text-center">
+        <h1>Administración de países</h1>
+      </header>
+
+      <section id="alert-container" class="mb-4" aria-live="polite"></section>
+
+      <section class="panel panel-table mb-4">
+        <div class="card-body">
+          <div class="section-heading d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+            <div>
+              <p class="eyebrow mb-1">Manifiesto de destinos</p>
+              <h2 class="h4 mb-1">Países de la red</h2>
+            </div>
+            <div class="d-flex gap-2 align-items-center">
+              <label for="limitSelect" class="control-label mb-0">Ver</label>
+              <select id="limitSelect" class="form-select form-select-sm limit-control">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-responsive mt-3">
+            <table class="table align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>País</th>
+                  <th>Continente</th>
+                  <th>Población</th>
+                  <th>PIB 2019</th>
+                  <th>PIB 2020</th>
+                </tr>
+              </thead>
+              <tbody id="paisesTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-3 gap-3">
+            <div id="paginationInfo" class="pagination-info"></div>
+            <div class="btn-group gap-2">
+              <button id="nextButton" class="btn btn-primary">Siguiente</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <section class="panel form-panel h-100">
+            <div class="card-body">
+              <div class="form-title mb-4"><div><p class="eyebrow mb-1">Formulario</p><h2 class="h5 mb-0">Agregar país</h2></div></div>
+              <form id="addForm">
+                <div class="mb-3">
+                  <label for="nombreInput" class="form-label">Nombre</label>
+                  <input type="text" id="nombreInput" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                  <label for="continenteInput" class="form-label">Continente</label>
+                  <input type="text" id="continenteInput" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                  <label for="poblacionInput" class="form-label">Población</label>
+                  <input type="number" id="poblacionInput" class="form-control" min="0" required />
+                </div>
+                <div class="mb-3">
+                  <label for="pib2019Input" class="form-label">PIB 2019</label>
+                  <input type="number" id="pib2019Input" class="form-control" min="0" required />
+                </div>
+                <div class="mb-3">
+                  <label for="pib2020Input" class="form-label">PIB 2020</label>
+                  <input type="number" id="pib2020Input" class="form-control" min="0" required />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Agregar país</button>
+              </form>
+            </div>
+          </section>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <section class="panel form-panel h-100">
+            <div class="card-body">
+              <div class="form-title mb-4"><div><p class="eyebrow mb-1">Formulario</p><h2 class="h5 mb-0">Eliminar país</h2></div></div>
+              <form id="deleteForm">
+                <div class="mb-3">
+                  <label for="deleteNombreInput" class="form-label">Nombre del país</label>
+                  <input type="text" id="deleteNombreInput" class="form-control" required />
+                </div>
+                <button type="submit" class="btn btn-danger w-100">Eliminar país</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
